@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
+import java.io.File
 import java.time.Duration
 
 @TestMethodOrder(MethodOrderer.MethodName::class)
@@ -79,6 +80,9 @@ class Main {
         @JvmStatic
         @BeforeAll
         fun setUp() {
+            val path = File("./.driver/chromedriver.exe").absolutePath
+            System.setProperty("webdriver.chrome.driver", path)
+
             val chromeOptions = ChromeOptions()
                 .addArguments("--window-size=1920,1080")
 
