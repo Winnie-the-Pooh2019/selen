@@ -19,7 +19,6 @@ dependencies {
 tasks.test {
     // Access system properties set with -D flags'
 
-    systemProperty("mod", System.getProperty("mod"))
     systemProperty("email", System.getProperty("email"))
     systemProperty("pass", System.getProperty("pass"))
 
